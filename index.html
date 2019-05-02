@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap ToDo App</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <style>
+        .fab{
+            padding: 4px;
+            width: 30px;
+            height: 30px;
+        }
+        .fab > i{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 class="text-center">Bootstrap ToDo App</h1>
+
+<div class="container border">
+    <p class="text-primary h4">Tareas</p>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Status</th>
+            <th style="width: 124px;" scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Aprender Bootstrap</td>
+            <td><input type="checkbox" value="completed"/></td>
+            <td>
+                <button class="btn btn-danger rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Eliminar">
+                    <i class="material-icons">delete</i>
+                </button>
+                <button class="btn btn-warning rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Editar">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button class="btn btn-primary rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Ver">
+                    <i class="material-icons">visibility</i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Modificar este tutorial</td>
+            <td><input type="checkbox" value="completed"/></td>
+            <td>
+                <button class="btn btn-danger rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Eliminar">
+                    <i class="material-icons">delete</i>
+                </button>
+                <button class="btn btn-warning rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Editar">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button class="btn btn-primary rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Ver">
+                    <i class="material-icons">visibility</i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+</body>
+</html>
