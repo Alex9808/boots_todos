@@ -8,12 +8,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <style>
-        .fab{
+        .fab {
             padding: 4px;
             width: 30px;
             height: 30px;
         }
-        .fab > i{
+
+        .fab > i {
             font-size: 20px;
         }
     </style>
@@ -22,7 +23,14 @@
 <h1 class="text-center">Bootstrap ToDo App</h1>
 
 <div class="container border">
-    <p class="text-primary h4">Tareas</p>
+    <div style="display: flex">
+        <p class="text-primary h4">Tareas</p>
+        <div style="flex-grow: 1"></div>
+        <button onclick="openModal()" style="transform: translateY(-16px);" class="btn btn-success rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                title="Agregar">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
@@ -38,13 +46,16 @@
             <td>Aprender Bootstrap</td>
             <td><input type="checkbox" value="completed"/></td>
             <td>
-                <button class="btn btn-danger rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Eliminar">
+                <button class="btn btn-danger rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                        title="Eliminar">
                     <i class="material-icons">delete</i>
                 </button>
-                <button class="btn btn-warning rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Editar">
+                <button class="btn btn-warning rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                        title="Editar">
                     <i class="material-icons">edit</i>
                 </button>
-                <button class="btn btn-primary rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Ver">
+                <button class="btn btn-primary rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                        title="Ver">
                     <i class="material-icons">visibility</i>
                 </button>
             </td>
@@ -54,13 +65,16 @@
             <td>Modificar este tutorial</td>
             <td><input type="checkbox" value="completed"/></td>
             <td>
-                <button class="btn btn-danger rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Eliminar">
+                <button class="btn btn-danger rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                        title="Eliminar">
                     <i class="material-icons">delete</i>
                 </button>
-                <button class="btn btn-warning rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Editar">
+                <button class="btn btn-warning rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                        title="Editar">
                     <i class="material-icons">edit</i>
                 </button>
-                <button class="btn btn-primary rounded-circle fab" data-toggle="tooltip" data-placement="bottom" title="Ver">
+                <button class="btn btn-primary rounded-circle fab" data-toggle="tooltip" data-placement="bottom"
+                        title="Ver">
                     <i class="material-icons">visibility</i>
                 </button>
             </td>
@@ -68,11 +82,30 @@
         </tbody>
     </table>
 </div>
+<div id="modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
 
+        </div>
+    </div>
+</div>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
-
+<script src="js/main.js"></script>
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
